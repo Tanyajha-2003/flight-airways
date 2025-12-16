@@ -46,7 +46,7 @@ const App = () => {
     const fetchBookings = async () => {
       try {
         const res = await axios.get(
-          `${API_BASE}/bookings/user/${user.id}`
+          `${API_BASE}/api/bookings/user/${user.id}`
         );
         setBookings(res.data);
       } catch (err) {
@@ -62,7 +62,7 @@ const App = () => {
      ====================== */
   const handleSearchFlights = async (params) => {
     try {
-      const res = await axios.get(`${API_BASE}/flights/search`, {
+      const res = await axios.get(`${API_BASE}/api/flights/search`, {
         params
       });
       setFlights(res.data);
@@ -77,7 +77,7 @@ const App = () => {
   const handleBookingAttempt = async (flightId) => {
     try {
       const res = await axios.post(
-        `${API_BASE}/flights/${flightId}/attempt`,
+        `${API_BASE}/api/flights/${flightId}/attempt`,
         { userId: user.id }
       );
 
@@ -104,7 +104,7 @@ const App = () => {
      ====================== */
   const handleBookFlight = async (flightId, passengerInfo) => {
     try {
-      const res = await axios.post(`${API_BASE}/bookings`, {
+      const res = await axios.post(`${API_BASE}/api/bookings`, {
         userId: user.id,
         flightId,
         passengerInfo
@@ -133,7 +133,7 @@ const App = () => {
      ====================== */
   const handleAddFunds = async (amount) => {
     const res = await axios.post(
-      `${API_BASE}/wallet/${user.id}/add`,
+      `${API_BASE}/api/wallet/${user.id}/add`,
       { amount }
     );
 

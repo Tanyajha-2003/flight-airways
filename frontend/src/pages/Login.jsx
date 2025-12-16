@@ -20,7 +20,7 @@ export default function Login({ setUser }) {
 
     try {
       setLoading(true);
-      const res = await axios.post(`${API_BASE}/auth/login`, { email, password });
+      const res = await axios.post(`${API_BASE}/api/auth/login`, { email, password });
 
       const user = {
         id: res.data.user._id,

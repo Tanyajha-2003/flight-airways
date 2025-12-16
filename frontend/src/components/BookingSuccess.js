@@ -129,7 +129,7 @@ export default function BookingSuccess() {
       {/* Buttons */}
       <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
         <a
-          href={`${API_BASE}/bookings/ticket/${booking.pnr}`}
+          href={`${API_BASE}/api/bookings/ticket/${booking.pnr}`}
           className="btn-primary w-full sm:w-auto text-center py-2 px-6"
         >
           Download Ticket

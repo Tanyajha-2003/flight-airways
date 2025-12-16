@@ -23,7 +23,7 @@ const Register = ({ setUser }) => {
 
     try {
       setLoading(true);
-      const res = await axios.post(`${API_BASE}/auth/register`, form);
+      const res = await axios.post(`${API_BASE}/api/auth/register`, form);
 
       const user = {
         id: res.data.user._id,

@@ -200,7 +200,7 @@ const BookingHistory = ({ bookings }) => {
 
                   {/* Use API_BASE from env */}
                   <a
-                    href={`${API_BASE}/bookings/ticket/${booking.pnr}`}
+                    href={`${API_BASE}/api/bookings/ticket/${booking.pnr}`}
                     className="download-btn"
                   >
                     <FiDownload />

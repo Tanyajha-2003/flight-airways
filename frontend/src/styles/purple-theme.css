@@ -1,0 +1,939 @@
+/* Purple Theme Variables */
+:root {
+  --purple-primary: #6B46C1;
+  --purple-secondary: #805AD5;
+  --purple-light: #9F7AEA;
+  --purple-dark: #553C9A;
+  --purple-gradient: linear-gradient(135deg, #6B46C1 0%, #9F7AEA 100%);
+  --bg-primary: #FAF5FF;
+  --bg-secondary: #E9D8FD;
+  --text-primary: #2D3748;
+  --text-secondary: #4A5568;
+  --success: #38A169;
+  --warning: #D69E2E;
+  --danger: #E53E3E;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+/* Purple Gradient Background */
+.purple-gradient-bg {
+  background: var(--purple-gradient);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--purple-gradient);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(107, 70, 193, 0.3);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--purple-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--purple-light);
+  cursor: pointer;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--bg-secondary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(107, 70, 193, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-purple {
+  background: var(--purple-gradient);
+  color: white;
+}
+
+/* Surge Pricing Indicator */
+.surge-badge {
+  background: linear-gradient(135deg, #F56565 0%, #ED8936 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 101, 101, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 101, 101, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 101, 101, 0);
+  }
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  background: var(--bg-secondary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--purple-dark);
+}
+
+/* Form Styles */
+.input-field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--bg-secondary);
+  border-radius: 8px;
+  /* background: white; */
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--purple-light);
+  box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+}
+
+/* Wallet Balance */
+.wallet-balance {
+  background: var(--purple-gradient);
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.wallet-balance h3 {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.wallet-balance .amount {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Flight Card */
+.flight-card {
+  border-left: 4px solid var(--purple-primary);
+}
+
+.flight-card.surge {
+  border-left: 4px solid #F56565;
+}
+
+/* Navigation */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid var(--purple-primary);
+}
+/* Modern Glassmorphic Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 16px 16px;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Brand / Logo */
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  /* text-shadow: 0 0 8px #7F5AF0, 0 0 16px #FF7CE5; */
+  background: linear-gradient(135deg, #7F5AF0, #FF7CE5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  
+  gap: 24px;
+}
+
+.navbar-links a {
+  /* color: #fff; */
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none; 
+  color:#7F5AF0;
+  position: relative;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Logout Button */
+.btn-logout {
+  background: linear-gradient(135deg,#FF7CE5,#7F5AF0);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FF7CE5, 0 0 20px #7F5AF0;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #FF7CE5, 0 0 40px #7F5AF0;
+}
+/* Glassmorphic Card */
+.card, .card-purple {
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover, .card-purple:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Card Purple Special */
+.card-purple {
+  background: linear-gradient(135deg, rgba(127, 90, 240,0.3), rgba(255,124,229,0.3));
+  color: white;
+  color: #FF7CE5;
+  text-shadow: 0 0 6px rgba(255,124,229,0.8);
+}
+
+/* Wallet Balance */
+.wallet-balance .amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px #7F5AF0, 0 0 20px #FF7CE5;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 12px #7F5AF0, 0 0 24px #FF7CE5;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px #7F5AF0, 0 0 48px #FF7CE5;
+}
+
+/* Amount Quick Buttons */
+button.amount-btn {
+  border-radius: 12px;
+  padding: 10px 8px;
+  font-weight: 600;
+border-color: #baa7f1;
+  transition: all 0.3s ease;
+}
+
+button.amount-btn.active {
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  color: white;
+  box-shadow: 0 0 12px #7F5AF0, 0 0 24px #FF7CE5;
+}
+
+/* Table Styling */
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+table th {
+  font-weight: 600;
+  color: #9F7AEA;
+  text-align: left;
+}
+
+table td {
+  background: rgba(255,255,255,0.05);
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+table tr:hover td {
+  background: rgba(127,90,240,0.1);
+}
+
+/* Tooltip / LineChart */
+.recharts-tooltip-wrapper {
+  background: rgba(127,90,240,0.9) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  border: none !important;
+  font-size: 0.875rem;
+}
+/* Glassmorphic Card for Flight Search */
+.card {
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Inputs & Select Fields */
+.input-field {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(127,90,240,0.3);
+  background: rgba(255,255,255,0.05);
+   color:#9F7AEA;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #FF7CE5;
+  box-shadow: 0 0 12px #7F5AF0, 0 0 24px #FF7CE5;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Labels */
+label {
+  color: #D6BCFA;
+  font-weight: 500;
+}
+
+/* Neon Gradient Button */
+.btn-primary {
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 12px #7F5AF0, 0 0 24px #FF7CE5;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px #7F5AF0, 0 0 48px #FF7CE5;
+}
+
+/* Icons */
+svg {
+  color: #FF7CE5;
+}
+/* Glassmorphic Flight Card */
+.flight-card {
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Surge Badge - Neon Animation */
+.surge-badge {
+  background: linear-gradient(135deg, #FF5F6D 0%, #FFC371 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 95, 109, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 95, 109, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 95, 109, 0); }
+}
+
+/* Countdown Timer - Neon */
+.countdown-timer {
+  background: rgba(127,90,240,0.2);
+  padding: 6px 12px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #FF7CE5;
+  font-size: 12px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 4px #FF7CE5, 0 0 8px #7F5AF0; }
+  100% { text-shadow: 0 0 8px #FF7CE5, 0 0 16px #7F5AF0; }
+}
+
+/* Price Styling */
+.flight-card .text-2xl.font-bold {
+  background: linear-gradient(90deg, #7F5AF0, #FF7CE5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Global placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: #9F7AEA; /* soft purple color */
+  opacity: 1; /* ensure full color visibility */
+}
+
+/* Optional: for better cross-browser support */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #9F7AEA;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #9F7AEA;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #9F7AEA;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #9F7AEA;
+}
+.navbar-links span,
+.navbar-links span strong {
+  color: #9F7AEA !important;
+}
+/* Input group - centered and stylish */
+.input-group {
+  @apply flex items-center border border-purple-300 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-purple-400 mx-auto w-full max-w-md bg-purple-50;
+}
+
+/* Icon inside input */
+.input-group .icon {
+  @apply text-purple-600 mx-4 text-2xl;
+}
+
+/* Primary button */
+.btn-primary-1 {
+  @apply text-white py-3 px-6 rounded-2xl font-semibold hover:bg-purple-700 shadow-lg transition duration-300 mx-auto block w-full max-w-md;
+   background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+    box-shadow: 0 0 24px #7F5AF0, 0 0 48px #FF7CE5;
+}
+
+.bg-airline {
+  @apply  flex items-center justify-center bg-gradient-to-br from-purple-100 via-pink-50 to-purple-200 p-20;
+}
+
+.card-register {
+  @apply bg-white rounded-3xl shadow-2xl p-10 space-y-6 w-full max-w-md mx-auto transform hover:-translate-y-2 transition-all duration-300;
+}
+
+/* Heading style */
+.heading {
+  @apply text-3xl font-bold text-purple-900 text-center mb-6;
+}
+
+/* Footer links */
+.footer-link {
+  @apply text-purple-700 font-semibold underline;
+}
+
+/* Wallet bonus text */
+.wallet-bonus {
+  @apply text-xs text-center mt-2 text-purple-500;
+}
+
+
+/* ============================= */
+/* ✈️ FLIGHT LIST – PREMIUM UI */
+/* ============================= */
+
+.flight-list-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(127,90,240,0.15);
+  transition: all 0.4s ease;
+  display: grid;
+  gap: 20px;
+}
+
+.flight-list-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 40px rgba(127,90,240,0.3),
+    0 0 30px rgba(255,124,229,0.25);
+}
+
+/* Header */
+.flight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.airline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.airline-name {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#7F5AF0,#FF7CE5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flight-id {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(127,90,240,0.2);
+  color:#805AD5;
+}
+
+/* Surge */
+.surge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg,#FF5F6D,#FFC371);
+  color: white;
+  font-weight: 600;
+}
+
+/* Route */
+.flight-route {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.city {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color:#9F7AEA;
+}
+
+.route-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #FF7CE5;
+}
+
+.route-line .dash {
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg,#7F5AF0,#FF7CE5);
+}
+
+.route-line .dot {
+  width: 6px;
+  height: 6px;
+  background: #FF7CE5;
+  border-radius: 50%;
+}
+
+/* Meta */
+.flight-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #D6BCFA;
+}
+
+.flight-meta div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Action */
+.flight-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #9F7AEA;
+}
+
+.price.surge {
+  color: #FF7CE5;
+}
+
+.old-price {
+  font-size: 13px;
+  color: #A0AEC0;
+  text-decoration: line-through;
+}
+
+/* Book Button */
+.book-btn {
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(127,90,240,0.6);
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255,124,229,0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flight-card {
+    padding: 16px;
+  }
+  .flex.flex-col.md\:flex-row {
+    flex-direction: column !important;
+  }
+  .items-end {
+    align-items: flex-start !important;
+  }
+}
+/* ============================= */
+/* ✈️ FLIGHT HISTORY UPGRADE */
+/* ============================= */
+
+.flight-history-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 12px 30px rgba(127,90,240,0.15);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.flight-history-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 20px 40px rgba(127,90,240,0.25),
+    0 0 25px rgba(255,124,229,0.25);
+}
+
+/* PNR */
+.pnr-box {
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  padding: 10px 16px;
+  border-radius: 14px;
+  color: white;
+  text-align: center;
+}
+
+.pnr-label {
+  font-size: 10px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.pnr-value {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Meta chip */
+.meta-chip {
+  background: rgba(127,90,240,0.15);
+  padding: 8px 14px;
+  border-radius: 999px;
+  color:#9F7AEA;
+  font-size: 13px;
+}
+
+/* Status */
+.status-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-pill.confirmed {
+  background: rgba(56,161,105,0.2);
+  color: #38A169;
+}
+
+.status-pill.pending {
+  background: rgba(214,158,46,0.2);
+  color: #D69E2E;
+}
+
+/* Route */
+.route-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  /* color: #E9D8FD; */
+  color: #805AD5;
+}
+
+.route-line svg {
+  color: #FF7CE5;
+}
+
+.arrow {
+  margin: 0 8px;
+  color: #FF7CE5;
+}
+
+/* Details */
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Price Box */
+.price-box {
+  min-width: 220px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price {
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(90deg,#7F5AF0,#FF7CE5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.old-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #A0AEC0;
+}
+
+.price-label {
+  font-size: 12px;
+  color: #D6BCFA;
+}
+
+/* Download Button */
+.download-btn {
+  margin-top: 14px;
+  align-self: flex-end;
+  background: linear-gradient(135deg,#7F5AF0,#FF7CE5);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  text-decoration: none;
+  gap: 8px;
+  align-items: center;
+  box-shadow: 0 0 14px rgba(127,90,240,0.6);
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px rgba(255,124,229,0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-cols-3, .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 24px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card, .card-purple {
+    padding: 16px;
+  }
+
+  .btn-primary {
+    padding: 10px 16px;
+  }
+
+  table td, table th {
+    padding: 8px 12px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-primary);
+}
